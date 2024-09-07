@@ -1,0 +1,13 @@
+run filebeat
+`````````````
+sudo ./filebeat -e -c filebeat.yml -d "publish"
+
+
+test logstash config
+````````````````````
+bin/logstash -f first-pipeline.conf --config.test_and_exit
+
+run logstash
+````````````
+bin/logstash -f first-pipeline.conf --config.reload.automatic
+
