@@ -2,7 +2,6 @@ run filebeat
 `````````````
 sudo ./filebeat -e -c filebeat.yml -d "publish"
 
-
 test logstash config
 ````````````````````
 bin/logstash -f first-pipeline.conf --config.test_and_exit
@@ -11,3 +10,9 @@ run logstash
 ````````````
 bin/logstash -f first-pipeline.conf --config.reload.automatic
 
+create kafka topic
+``````````````````
+bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic access_logs
+
+create kafka consumer
+`````````````````````
