@@ -16,3 +16,8 @@ bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-fac
 
 create kafka consumer
 `````````````````````
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic access_logs --from-beginning
+
+run spark job
+`````````````
+spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2 app.py
